@@ -1,1 +1,18 @@
-This is a test
+# Plan
+Using HTML, CSS, and JS, Create a 3D representation of the earth that floats in space. Clicking on the surface of the planet will display the current time there with a pop-up. A 3d pin will also be placed at that location until another location is selected, at which point the first pin will fade. The camera should be far enough out to allow for viewing the entire planet, but allows for zooming in or out (max distance should be 300% from default view). Additionally, clicking and dragging should pan the view around the earth. The earth should always be the center point of the view. Zooming in should never clip past the mesh surface of the earth.
+
+This will mostly be leveraging HTML5, along with three.js
+
+The Astronomy API should be used to determine the position of the Earth in relation to the sun and other celestial bodies.
+
+The "Where is the ISS at?" API should be used to track where the International Space Station is in relation to Earth.
+
+We'll use IPGeolocation's Astronomy API for the Sun Azimuth and Sun Altitude based on the current time. We'll also use the Subsolar point. This will help place the DirectionalLight from Three.js I've also added solar-calculator.
+
+Current time and date should be used to determine the rotation of the earth, its position relative to the sun, and what parts of the earth should be illuminated. (Is this the best way to calculate this information?)
+
+Luxon and browser-geo-tz will be used to determine the current time at a location.
+
+The earth should be stylized, with the oceans a deep purple (#0f0018), and the land a gradiant that shifts from dark purple (#1f014d) to light purple (#6803FF) depending on current illumination levels. It should be similar to the reference photo (/home/dmin/personal_projects/3d_timezone/Images/AI_Gen/Stylized Earth Reference Photo.png), but without the rings.
+
+We'll be using three-globe to assist in displaying the earth.
